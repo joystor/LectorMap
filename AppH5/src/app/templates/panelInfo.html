@@ -1,0 +1,521 @@
+<div id="slide-out" class="side-nav">
+  <header>
+    <div class="navbar fixed">
+      <nav class="light-blue darken-3">
+        <div class="nav-wrapper">
+          <a id="btnRegresar" href="#" class="brand-logo left"><i class="material-icons white-text">keyboard_arrow_left</i>
+          <div id="secName">DCI:</div>
+        </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col s8">
+        <p id="shFolio"></p>
+      </div>
+      <div class="input-field col s4">
+        <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">save</i></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a class="active" href="#stInfo"><i class="material-icons">info</i></a></li>
+          <li class="tab col s3"><a href="#stLect"><i class="material-icons">create</i></a></li>
+          <li class="tab col s3"><a href="#stPhoto"><i class="material-icons">camera_alt</i></a></li>
+          <li class="tab col s3"><a href="#stCambios"><i class="material-icons">refresh</i></a></li>
+        </ul>
+      </div>
+      <div id="stInfo" class="col s12">
+        <p id="pInfoClient">
+          Dirección: direccion
+          <br/> Cliente: Nombre del cliente
+          <br/> Folio: folio
+        </p>
+      </div>
+      <div id="stLect" class="col s12">
+        <br/>
+        <div id="secDatosLectura">
+
+          <div id="secCapLec" style="">
+            <div class="row">
+              <div class="input-field col s12">
+                <div class="card-panel blue lighten-5">
+                  <input id="inplect" type="text" class="validate">
+                  <label for="inplect">Lectura</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="secCapInc" style="display:none">
+            <div class="row">
+              <div class="input-field col s12">
+                <div class="card-panel red lighten-5">
+                  <input id="inpinc" type="text" class="validate">
+                  <label for="inpinc">Orden</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="secTipInc" class="row" style="">
+            <div class="input-field col s12">
+              <div class="card-panel red lighten-5">
+                <select id="selTipInc" class="validate">
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="1">1	- Medidor detenido</option>
+                  <option value="2">2	- Medidor descompuesto</option>
+                  <option value="3">3	- Se nego a la toma de lectura</option>
+                  <option value="4">4	- Medidor invertido</option>
+                  <option value="5">5	- Medidor alterado</option>
+                  <option value="6">6	- Lectura ilegible</option>
+                  <option value="9">9	- Medidor desconectado</option>
+                  <option value="10">10	- Deshabitado sin medidor</option>
+                  <option value="14">14	- Domicilio cerrado</option>
+                  <option value="15">15	- Deshabitado con medidor</option>
+                  <option value="16">16	- Lote sin toma</option>
+                  <option value="36">36	- No localizado</option>
+                  <option value="39">39	- Lote c/toma s/medidor</option>
+                  <option value="40">40	- No existe cuadro</option>
+                  <option value="42">42	- Sin medidor</option>
+                  <option value="44">44	- Lote c/toma c/medidor</option>
+                  <option value="45">45	- Predio unificado o absorbido</option>
+                  <option value="47">47	- Duplicado</option>
+                  <option value="49">49	- Vuelta de medidor</option>
+                </select>
+                <label>Tipo de incidencia</label>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="row">
+
+          </div>
+
+        </div>
+      </div>
+      <div id="stPhoto" class="col s12">
+        <div id="secFoto" style="">
+          <div class="row">
+            <a id="btnFoto" class="btn-floating btn-large waves-effect waves-light red">
+              <i class="material-icons" style="width:initial">photo_camera</i>
+            </a>
+            <div id="numFotos"></div>
+          </div>
+          <div id="secPhoto" class="row">
+          </div>
+        </div>
+      </div>
+
+<!-- Inicio de Cambios -->
+      <div id="stCambios" class="col s12">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selMedidoresUbicacionPred" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1	- Dentro accesible al lecturista.</option>
+                <option value="2">2	- Fuera</option>
+                <option value="3">3	- Registro</option>
+                <option value="4">4	- Dentro no accesible al lecturista.</option>
+                <option value="5">5	- Sin columpio visible</option>
+              </select>
+              <label for="selMedidoresUbicacionPred">Medidores Ubicación Pred</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selAlertas" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1 -	Medidor oculto en arbustos o pasto</option>
+                <option value="2">2	- Zona peligrosa</option>
+                <option value="3">3	- Usuario agresivo</option>
+                <option value="4">4	- Mascotas sin control</option>
+                <option value="5">5	- Otro (Especifique)</option>
+              </select>
+              <label for="selAlertas">Alertas</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selLectAnom" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1" data-anoidant="F">1 -	MEDIDOR DETENIDO</option>
+                <option value="2" data-anoidant="D">2 -	MEDIDOR DESCOMPUESTO</option>
+                <option value="3" data-anoidant="N">3 -	SE NEGO A LA TOMA DE LECTURA</option>
+                <option value="5" data-anoidant="A">5 -	MEDIDOR ALTERADO</option>
+                <option value="6" data-anoidant="L">6 -	LECTURA ILEGIBLE</option>
+                <option value="9" data-anoidant="S">9 -	MEDIDOR DESCONECTADO</option>
+                <option value="10" data-anoidant="H">10 -	DESHABITADO SIN MEDIDOR</option>
+                <option value="14" data-anoidant="C">14 -	DOMICILIO CERRADO</option>
+                <option value="15" data-anoidant="E">15 -	DESHABITADO CON MEDIDOR</option>
+                <option value="16" data-anoidant="B">16 -	LOTE SIN TOMA</option>
+                <option value="36" data-anoidant="G">36 -	NO LOCALIZADO</option>
+                <option value="39" data-anoidant="J">39 -	LOTE C/TOMA S/MEDIDOR</option>
+                <option value="40" data-anoidant="K">40 -	NO EXISTE CUADRO</option>
+                <option value="42" data-anoidant="M">42 -	SIN MEDIDOR</option>
+                <option value="44" data-anoidant="O">44 -	LOTE C/TOMA C/MEDIDOR</option>
+                <option value="47" data-anoidant="R">47 -	DUPLICADO</option>
+                <option value="49" data-anoidant="V">49 -	VUELTA DE MEDIDOR</option>
+              </select>
+              <label for="selLectAnom">Lecturas Anomalias</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selConViv" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1	- CERRADA</option>
+                <option value="3">3	- HABITADO</option>
+                <option value="4">4	- DESHABITADO</option>
+              </select>
+              <label for="selConViv">Condición vivienda</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selPreCol" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1	- Azul</option>
+                <option value="2">2	- Rojo</option>
+                <option value="3">3	- Plomo</option>
+              </select>
+              <label for="selPreCol">Precinto colores</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selTipEdif" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1 -	Construido</option>
+                <option value="2">2	- Ruinas</option>
+                <option value="3">3	- Baldio</option>
+                <option value="4">4	- Lote baldio</option>
+                <option value="5">5	- Huelga</option>
+                <option value="6">6	- Obra en construcción</option>
+              </select>
+              <label for="selTipEdif">Tipo Edificación</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selEstCom" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1 -	Activo</option>
+                <option value="2">2 -	Baja</option>
+                <option value="3">3 -	En trámite</option>
+                <option value="4">4 -	Notificado</option>
+                <option value="5">5 -	Suspensión temporal</option>
+                <option value="6">6 -	Restricción moroso</option>
+                <option value="7">7 -	Restricción clandestina</option>
+                <option value="8">8 -	Restricción casa deshabitada</option>
+                <option value="9">9 -	Restricción lote baldio</option>
+                <option value="10">10 -	No facturable</option>
+                <option value="11">11 -	En proceso legal</option>
+                <option value="12">12 -	Público en general</option>
+                <option value="13">13 -	Incobrable</option>
+              </select>
+              <label for="">Estado Comercial</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selTipServ" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1 -	Doméstico</option>
+                <option value="2">2 -	Comercial</option>
+                <option value="3">3 -	Industrial</option>
+                <option value="4">4 -	Predio Público</option>
+                <option value="5">5 -	Derivación</option>
+                <option value="6">6 -	Agua tratada</option>
+                <option value="7">7 -	Pozo propio</option>
+              </select>
+              <label for="selTipServ">Tipo de Servicio</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selTipLec" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="2">2	HH Teclado</option>
+                <option value="3">3	HH Electrónico</option>
+                <option value="4">4	Radio</option>
+              </select>
+              <label for="selTipLec">Tipo Lectura</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selEstServ" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1 -	Real</option>
+                <option value="2">2	- Baja</option>
+                <option value="3">3	- En contratación</option>
+              </select>
+              <label for="selEstServ">Estado Servicio</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selGiros" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1	Indefinido</option>
+                <option value="2">2	SECASX</option>
+                <option value="3">3	SEMI-HUMEDAS</option>
+                <option value="4">4	HUMEDAS</option>
+                <option value="5">5	Agencia automotriz/maquin</option>
+                <option value="6">6	Alimentos/Comida</option>
+                <option value="7">7	Autolavado</option>
+                <option value="8">8	Paq/Fletes/Autotransporte</option>
+                <option value="9">9	Baños Públicos</option>
+                <option value="10">10	Bodega</option>
+                <option value="11">11	CANTINA</option>
+                <option value="12">12	CARNICERIA</option>
+                <option value="13">13	Centro Comercial</option>
+                <option value="14">14	Deportivo</option>
+                <option value="15">15	Embotelladora/Purificador</option>
+                <option value="16">16	Empacadora/Distribuidora</option>
+                <option value="17">17	Escuela Pública</option>
+                <option value="18">18	Escuela Privada</option>
+                <option value="19">19	Fábrica</option>
+                <option value="20">20	FARMACIA</option>
+                <option value="21">21	Gasolineria/Gasera</option>
+                <option value="22">22	GIMNASIO</option>
+                <option value="23">23	Habitacional</option>
+                <option value="24">24	Clin/Hosp/Lab</option>
+                <option value="25">25	Hotel/Motel</option>
+                <option value="26">26	Industria Aceitera</option>
+                <option value="27">27	Industria Lácteos</option>
+                <option value="28">28	Industria Mecánica</option>
+                <option value="29">29	Industria Papelera</option>
+                <option value="30">30	Industria Textil</option>
+                <option value="31">31	Lavanderia/Tintorería</option>
+                <option value="32">32	Local Comercial</option>
+                <option value="33">33	Materiales Construcción</option>
+                <option value="34">34	Metalurgica</option>
+                <option value="35">35	MISCELANEA</option>
+                <option value="36">36	Molino</option>
+                <option value="37">37	Mueblería</option>
+                <option value="38">38	Oficinas</option>
+                <option value="39">39	Otros</option>
+                <option value="40">40	Panificadora/Pastelería</option>
+                <option value="41">41	PESCADOS Y MARISCOS</option>
+                <option value="42">42	POLLERIA</option>
+                <option value="43">43	Propiedad Pública Estatal</option>
+                <option value="44">44	Propiedad Pública Federal</option>
+                <option value="45">45	Propiedad Pública Municip</option>
+                <option value="46">46	Productos Químicos</option>
+                <option value="47">47	RECAUDERIA</option>
+                <option value="48">48	Refaccionaria</option>
+                <option value="49">49	Restaurant/Bar</option>
+                <option value="50">50	Salón de Fiestas</option>
+                <option value="51">51	Taller Mecánico</option>
+                <option value="52">52	Telefonía</option>
+                <option value="53">53	Templos/Iglesias</option>
+                <option value="54">54	ZAPATERIA</option>
+              </select>
+              <label for="selGiros">Giros</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selLecturista" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="3323">	Moreno Soria Adrián</option>
+                <option value="118">	Hernández Aguilar Agustín</option>
+                <option value="4520">	Oliver García Agustín</option>
+                <option value="4248">	Pérez Villegas Alfredo</option>
+                <option value="1063">	Marquez Vazquez Alvaro</option>
+                <option value="3431">	Fuentes Garcia Angel</option>
+                <option value="4421">	Ávila Flores Arturo Enrique</option>
+                <option value="471">	Velasco Pantoja Arturo</option>
+                <option value="3334">	Trejo Pérez Benjamín</option>
+                <option value="4727">	Atilano Chávez Brian Rubén</option>
+                <option value="459">	Lozada Chávez Carlos Hilario</option>
+                <option value="472">	Rojas Reyes César Luis</option>
+                <option value="469">	Sánchez Gallegos Cipriano</option>
+                <option value="4007">	Aguilar González Daniel</option>
+                <option value="4425">	Bernardino Ramos Daniel Israel</option>
+                <option value="2465">	Pascoe Koch Daniel</option>
+                <option value="5279">	López Vega Diego Ricardo</option>
+                <option value="5174">	Alfaro Iver Eduardo</option>
+                <option value="1805">	Osorio Gómez Eduardo Antonio</option>
+                <option value="652">	Trejo Morales Eduardo</option>
+                <option value="461">	Torres Bezaury Enrique</option>
+                <option value="4933">	Espinosa Guevara Ernesto Alejandro</option>
+                <option value="4742">	Nava Quintero Ernesto</option>
+                <option value="4567">	Barrera Rueda Fernando</option>
+                <option value="3566">	Falcón  Arnaiz Fernando César</option>
+                <option value="4577">	Posadas Ramírez Fernando</option>
+                <option value="467">	Cruz Osorio Fidel</option>
+                <option value="3384">	Rodríguez Hernández Francisco</option>
+                <option value="4328">	Gonzalez Cruz Gabriel</option>
+                <option value="5128">	Nava Diaz Gilberto Martin</option>
+                <option value="5309">	Lopez Flores Gissel Roberto</option>
+                <option value="4401">	León Cortez Guillermo</option>
+                <option value="4912">	Prado González Hilario</option>
+                <option value="5175">	Sarabia Koo Isaac Ven Yacov</option>
+                <option value="0">	González Barradas J.Orlando</option>
+                <option value="153">	Camacho  Ávila Javier</option>
+                <option value="2270">	Sánchez Ortega Jesús</option>
+                <option value="982">	Alva Álvarez Jorge </option>
+                <option value="465">	Escoto Dávila Joaquín</option>
+                <option value="4519">	Catalán Domínguez Jorge Arturo</option>
+                <option value="4496">	Morales Andrade Jorge Alberto</option>
+                <option value="3343">	Casimiro Vega Jose Efren</option>
+                <option value="480">	Garcia Salazar Jose Luis</option>
+                <option value="4142">	Lecona Albarran Jose Rene</option>
+                <option value="4351">	Memije Sandoval José Gilberto</option>
+                <option value="4379">	Torres Nieto Jose Guadalupe</option>
+                <option value="4201">	González Cortés Juan Carlos</option>
+                <option value="4329">	Osorio Salazar Juan</option>
+                <option value="3519">	Ramirez Garcia Juan Pablo</option>
+                <option value="4474">	Reyes Nieves Juana</option>
+                <option value="3332">	Rodriguez García Juan José</option>
+                <option value="1579">	Segovia Bartolo Juan Antonio</option>
+                <option value="259">	González Cortés Julio</option>
+                <option value="4732">	Cisneros Munguía Laura Olivia</option>
+                <option value="0">	Hernández Plata Luis Javier</option>
+                <option value="3785">	Rodriguez Balderas Luis Andres</option>
+                <option value="5219">	Valle Calderón Luis Alberto</option>
+                <option value="972">	Varela Aguilar Luis Manuel</option>
+                <option value="2034">	Huescas Hernández Mario</option>
+                <option value="4591">	Rodríguez Juárez Mario Alberto</option>
+                <option value="4427">	Velarde González Mario</option>
+                <option value="0">	Lima Campos Michael Geovanni</option>
+                <option value="4952">	Cuenca Orozco Miguel Orozco Miguel Angel</option>
+                <option value="4369">	Ramirez Contreras Omar</option>
+                <option value="2406">	Garcia Hernandez Pedro Antonio</option>
+                <option value="4745">	García Galván Pedro</option>
+                <option value="5122">	Luna Olguín Raúl</option>
+                <option value="2341">	Núñez García Rodrigo</option>
+                <option value="743">	Rodriguez Torres Rodrigo</option>
+                <option value="4423">	González Pozos Rogelio</option>
+                <option value="4473">	Gutiérrez Ronquillo Rolando</option>
+                <option value="3133">	ESPINOZA AYALA HUGO ENRIQUE</option>
+                <option value="1640">	MATEOS ALVAREZ ADRIAN</option>
+                <option value="5334">	MARQUEZ JIMENEZ MA. GUADALUPE</option>
+                <option value="5410">	MARTINEZ BUTRON HILDA</option>
+                <option value="5430">	HERNANDEZ HERNANDEZ PATZIMBA</option>
+                <option value="5433">	HERNANDEZ NICACIO FRANCO</option>
+                <option value="4863">	FLORES HERNANDEZ CONRADO</option>
+                <option value="5472">	RAYON GARIBAY FRANCISCO SAUL</option>
+                <option value="5449">	GUEVARA MARCO</option>
+                <option value="5429">	Perez Juana Alicia</option>
+                <option value="5434">	Tamayo Marcos</option>
+              </select>
+              <label for="selLecturista">Lecturistas</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel blue lighten-4">
+              <select id="selRepGest" class="validate material-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">1	Fuga en Toma domiciliaria FTA</option>
+                <option value="2">2	Fuga en medidor FMA</option>
+                <option value="3">3	Fuga en columpio FCL</option>
+                <option value="4">4	Desazolve de albañal DTI</option>
+                <option value="5">5	Tapar bache BA</option>
+                <option value="6">6	Retirar escombro RE</option>
+                <option value="7">7	Baja presión BP</option>
+                <option value="8">8	 Falta de Agua FA</option>
+              </select>
+              <label for="selRepGest">Reporte Gestión</label>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- FIN CAMBIOS -->
+
+    </div>
+
+    <ul>
+
+
+      <li id="secInfo">
+        <div class="col s12">
+
+
+
+
+
+        </div>
+
+      </li>
+
+
+
+      <li style="display:none">
+        <div class="divider"></div>
+      </li>
+      <li style="display:none"><a class="subheader">Subheader</a>
+      </li>
+    </ul>
+  </div>
+  <!--div class="mp-tools-left">
+
+  </div-->
+</div>
+
+<a href="#" data-activates="slide-out" id="button-collapse" style="display:none"><i class="material-icons">menu</i></a>
+
+
+
+<div id="modalConfirData" class="modal">
+    <div class="modal-content">
+      <h4>Guardar Información</h4>
+      <p>Si se envian los datos, despues no se podran modicar</p>
+    </div>
+    <div class="modal-footer">
+      <a id="btnConfirmSaveData" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+    </div>
+  </div>

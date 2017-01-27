@@ -1,0 +1,8 @@
+AppH5/node_modules
+AppH5/src/images/logo.png
+AppH5/src/images/XOOK*
+platforms
+plugins
+res
+www/*
+!www/index.html

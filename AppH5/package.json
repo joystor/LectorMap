@@ -1,0 +1,25 @@
+{
+  "name": "visor",
+  "version": "1.0.0",
+  "description": "Visor de rutas",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-minify": "0.0.14",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-replace": "^0.5.4",
+    "gulp-stylus": "^2.5.0",
+    "gulp-underscore-template": "^1.0.0",
+    "gulp-util": "^3.0.7",
+    "nib": "^1.1.2"
+  }
+}
