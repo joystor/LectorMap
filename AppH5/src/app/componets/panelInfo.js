@@ -76,7 +76,8 @@
 
     },
 
-    readPredio:function(ruta){
+    //readPredio:function(ruta){
+    readClientes:function(recorridoID){
       $('#pPanelInfo input[type="radio"]').prop('checked', false);
       $('#pPanelInfo input[type="text"]').val('');
       $('#pPanelInfo textarea').val('');

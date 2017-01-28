@@ -131,6 +131,18 @@
       });
     },
 
+    getLecturistaId: function(options){
+      this.mapApiCall({
+        url:"api/lecturista",
+        onSuccess: options.onSuccess,
+        onError: function(e){
+          console.log('getLecturista ERROR');
+          console.log(e);
+        },
+        method:'GET'
+      });
+    },
+
     mapApiCall: function(options){
       if( App.CONFIG.isInternetActive === false ){
         Materialize.toast('Se necesita conección a internet', 4000, 'red');

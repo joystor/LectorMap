@@ -47,22 +47,8 @@
     },
     reSyncRutas: function() {
       $('#btnCollapseSettings').sideNav('hide');
-      delete App.DATOS.recorridos;
-      App.DATOS.rutas = {
-        _id: 'rutas',
-        data: []
-      };
-
-      App.DB.get('rutas').then(function(p) {
-        return App.DB.remove(p._id, p._rev);
-      });
       $('#listRecorridos').html('');
-      App.DB.get('recorridos').then(function(r) {
-        //App.map.syncRutas();
-        App.rutas.readRutas();
-        return App.DB.remove(r);
-      }).catch(function() {
-        //App.map.syncRutas();
+      App.rutas.cleanRutas(function(){
         App.rutas.readRutas();
       });
     },

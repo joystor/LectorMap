@@ -1,23 +1,17 @@
 <div id="slide-out" class="side-nav">
-  <header>
-    <div class="navbar fixed">
-      <nav class="light-blue darken-3">
-        <div class="nav-wrapper">
-          <a id="btnRegresar" href="#" class="brand-logo left"><i class="material-icons white-text">keyboard_arrow_left</i>
-          <div id="secName">DCI:</div>
-        </a>
-        </div>
-      </nav>
-    </div>
-  </header>
+
   <div class="container">
 
 
     <div class="row">
-      <div class="col s8">
-        <p id="shFolio"></p>
+      <div class="col s7">
+        <p id="pInfoPredio"></p>
       </div>
-      <div class="input-field col s4">
+      <div class="input-field">
+          <a id="btnLastPredio" class="col s2 waves-effect waves-light btn"><i class="material-icons">navigate_before</i></a>
+          <a id="btnNextPredio" class="col s2 waves-effect waves-light btn"><i class="material-icons">navigate_next</i></a>
+      </div>
+      <div class="row col s12">
         <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">save</i></a>
       </div>
     </div>
@@ -29,13 +23,11 @@
           <li class="tab col s3"><a href="#stLect"><i class="material-icons">create</i></a></li>
           <li class="tab col s3"><a href="#stPhoto"><i class="material-icons">camera_alt</i></a></li>
           <li class="tab col s3"><a href="#stCambios"><i class="material-icons">refresh</i></a></li>
+          <li class="tab col s3"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">room</i></a></li>
         </ul>
       </div>
       <div id="stInfo" class="col s12">
         <p id="pInfoClient">
-          Dirección: direccion
-          <br/> Cliente: Nombre del cliente
-          <br/> Folio: folio
         </p>
       </div>
       <div id="stLect" class="col s12">
@@ -69,7 +61,7 @@
             <div class="input-field col s12">
               <div class="card-panel red lighten-5">
                 <select id="selTipInc" class="validate">
-                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="0" selected>Seleccione una opción</option>
                   <option value="1">1	- Medidor detenido</option>
                   <option value="2">2	- Medidor descompuesto</option>
                   <option value="3">3	- Se nego a la toma de lectura</option>
@@ -94,10 +86,6 @@
               </div>
             </div>
           </div>
-
-
-
-
 
           <div class="row">
 
@@ -125,7 +113,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selMedidoresUbicacionPred" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Dentro accesible al lecturista.</option>
                 <option value="2">2	- Fuera</option>
                 <option value="3">3	- Registro</option>
@@ -141,7 +129,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selAlertas" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 -	Medidor oculto en arbustos o pasto</option>
                 <option value="2">2	- Zona peligrosa</option>
                 <option value="3">3	- Usuario agresivo</option>
@@ -157,7 +145,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selLectAnom" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1" data-anoidant="F">1 -	MEDIDOR DETENIDO</option>
                 <option value="2" data-anoidant="D">2 -	MEDIDOR DESCOMPUESTO</option>
                 <option value="3" data-anoidant="N">3 -	SE NEGO A LA TOMA DE LECTURA</option>
@@ -185,7 +173,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selConViv" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- CERRADA</option>
                 <option value="3">3	- HABITADO</option>
                 <option value="4">4	- DESHABITADO</option>
@@ -199,7 +187,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selPreCol" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Azul</option>
                 <option value="2">2	- Rojo</option>
                 <option value="3">3	- Plomo</option>
@@ -213,7 +201,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selTipEdif" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 -	Construido</option>
                 <option value="2">2	- Ruinas</option>
                 <option value="3">3	- Baldio</option>
@@ -230,7 +218,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selEstCom" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 -	Activo</option>
                 <option value="2">2 -	Baja</option>
                 <option value="3">3 -	En trámite</option>
@@ -254,7 +242,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selTipServ" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 -	Doméstico</option>
                 <option value="2">2 -	Comercial</option>
                 <option value="3">3 -	Industrial</option>
@@ -272,7 +260,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selTipLec" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="2">2	HH Teclado</option>
                 <option value="3">3	HH Electrónico</option>
                 <option value="4">4	Radio</option>
@@ -286,7 +274,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selEstServ" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 -	Real</option>
                 <option value="2">2	- Baja</option>
                 <option value="3">3	- En contratación</option>
@@ -300,7 +288,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selGiros" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	Indefinido</option>
                 <option value="2">2	SECASX</option>
                 <option value="3">3	SEMI-HUMEDAS</option>
@@ -365,7 +353,7 @@
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selLecturista" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="3323">	Moreno Soria Adrián</option>
                 <option value="118">	Hernández Aguilar Agustín</option>
                 <option value="4520">	Oliver García Agustín</option>
@@ -458,7 +446,7 @@
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selRepGest" class="validate material-select">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	Fuga en Toma domiciliaria FTA</option>
                 <option value="2">2	Fuga en medidor FMA</option>
                 <option value="3">3	Fuga en columpio FCL</option>
@@ -475,34 +463,13 @@
 
       </div><!-- FIN CAMBIOS -->
 
+
+      <div id="stMap" class="col s12">
+        <div id="mapPredio" class="col s12" style="height:100ep;"></div>
+      </div>
+
     </div>
-
-    <ul>
-
-
-      <li id="secInfo">
-        <div class="col s12">
-
-
-
-
-
-        </div>
-
-      </li>
-
-
-
-      <li style="display:none">
-        <div class="divider"></div>
-      </li>
-      <li style="display:none"><a class="subheader">Subheader</a>
-      </li>
-    </ul>
   </div>
-  <!--div class="mp-tools-left">
-
-  </div-->
 </div>
 
 <a href="#" data-activates="slide-out" id="button-collapse" style="display:none"><i class="material-icons">menu</i></a>

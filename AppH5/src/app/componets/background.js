@@ -12,10 +12,60 @@
             tipo: lect.tipo,
             folio: lect.folio,
             lectura: lect.lectura,
-            incidencia: lect.incidencia,
-            observaciones: lect.observaciones,
+            anomalia: lect.anomalia,
             posicion_xy: lect.posicion_xy,
-            recorrido_id: lect.recorrido_id
+            recorrido_id: lect.recorrido_id,
+            idsmartphone: App.CONFIG.ID_Movil,
+            incidencia: lect.incidencia
+
+            //"vivienda": "0",
+            //"toma": "1",
+            //"intentos": "2",
+            //"alerta": "0",
+            //"comentario_alerta": "",
+            // NO "ubicacion_xy": lect.posicion_xy
+
+            //Excluir
+            /*"lecwebclave": 0,
+             "cliclave": "987654",
+             "predio": "123456",
+              "lecturista": "856524",
+              "cuenta_anterior": "01001001",
+
+
+            "recorrido_id": "2",
+            "idsmartphone": "2544",
+            "predio": "123456",
+            "vivienda": "0",
+            "toma": "1",
+            "cuenta_anterior": "01001001",
+            "lectura": "99970",
+            "anomalia": "3",
+            "lecturista": "856524",
+            "cambio_condiciondevivienda": "1",
+            "cambio_direccion": "Número oficial cambió de 373 a 375-A",
+            "cambio_edificacion": "0",
+            "cambio_electronico": "",
+            "cambio_giro": "0",
+            "cambio_serieprecinto": "44444",
+            "cambio_precintocolor": "0",
+            "cambio_serie": "",
+            "reporte_situacioncomercial": "1",
+            "reporte_gestion": "7",
+            "cambio_usodeservicio": "2",
+            "cambio_clavecatastral": "",
+            "fueralimite": "0",
+            "intentos": "2",
+            "tipolec": "2",
+            "cambio_ubicaciondelmedidor": "0",
+            "alerta": "0",
+            "comentario_alerta": "",
+            "fotografia1": 0,
+            "fotografia2": 0,
+            "fotografia3": 0,
+            "fotografia4": 0,
+            "fotografia5": 0,
+            "ubicacion_xy": lect.posicion_xy*/
           },
           onSuccess: function(o) {
             lect.lectura_id = o.id;
@@ -138,8 +188,8 @@
         { enableHighAccuracy: true });
     },*/
     sendGPS2Server: function(pos) {
-      var lat = App.map.currPos.lat;
-      var lng = App.map.currPos.lng;
+      var lat = App.GPS.currPos.lat;
+      var lng = App.GPS.currPos.lng;
       var ruta_id = 0;
       if (App.DATOS.recorridos && App.DATOS.recorridos.data && App.DATOS.recorridos.data[0] && App.DATOS.recorridos.data[0].rutas_id) {
         ruta_id = App.DATOS.recorridos.data[0].rutas_id;

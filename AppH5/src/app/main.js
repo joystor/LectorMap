@@ -18,6 +18,7 @@ App.LOGIN = {
 
 App.CONFIG = {
   ID_Movil: undefined,
+  LecturistaID: 0,
   isInternetActive: true,
   isGPSActive: false,
   LastTOKEN: '',
@@ -44,14 +45,8 @@ App.initApp = _.debounce(function() {
 
   VARS.currDate = moment().format('YYYY-MM-DD');
 
-  App.DATOS.rutas = {
-    _id: 'rutas',
-    data: []
-  };
-  App.DATOS.predios = {
-    _id: 'predios',
-    data: []
-  };
+
+
 
 
   document.addEventListener("online", App.onOnline, false);
@@ -65,6 +60,10 @@ App.initApp = _.debounce(function() {
 
 
 
+  App.DB.get('last-lecturista-id').then(function(t) {
+    App.CONFIG.LecturistaID = t.LecturistaID;
+  }).catch(function(e){console.log(e);});
+
   App.DB.get('last-token').then(function(t) {
     App.CONFIG.LastTOKEN = t.token;
   }).catch(function(e){console.log(e);});
@@ -75,19 +74,9 @@ App.initApp = _.debounce(function() {
       App.DATOS.recorridos.downAgain = false;
       if (r.date !== VARS.currDate) {
         App.DATOS.recorridos.downAgain = true;
-        App.DB.get('rutas')
-          .then(function(p) {
-            return App.DB.remove(p._id, p._rev);
-          }).catch(function(e){console.log(e);});
-      } else {
-        App.DB.get('rutas')
-          .then(function(p) {
-            App.DATOS.rutas = p;
-          }).catch(function(e){console.log(e);});
       }
     })
     .catch(function(err) {
-      delete App.DATOS.rutas;
     });
 
   App.DATOS.lecturas = {
@@ -118,9 +107,9 @@ App.initApp = _.debounce(function() {
   App.rutas = new App.Rutas();
   $('#app').append(App.rutas.render().$el);
 
-  App.panelInfo = new App.PanelInfo();
-  $('#app').append(App.panelInfo.render().$el);
-  App.panelInfo.activate();
+  App.predioLectura = new App.PredioLectura();
+  $('#app').append(App.predioLectura.render().$el);
+  App.predioLectura.activate();
 
   App.panelSettings = new App.PanelSettings();
   $('#app').append(App.panelSettings.render().$el);
@@ -185,6 +174,7 @@ App.bindEvents = function() {
 
 jQuery(document).ready(function() {
   App.initialize();
+  $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
 });
 
 (function() {

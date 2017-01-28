@@ -42,7 +42,29 @@
           //App.map.activate();
 
           $('#pRutas').show();
-          App.rutas.readRutas();
+          App.API.getLecturistaId({
+            onSuccess:function(id){
+              if(App.CONFIG.LecturistaID !== id){
+                App.CONFIG.LecturistaID = id;
+                App.DB.get('last-lecturista-id')
+                  .then(function(t) {
+                    t.LecturistaID = App.CONFIG.LecturistaID;
+                    return App.DB.put(t);
+                  })
+                  .catch(function(err) {
+                    App.DB.put({
+                      _id: 'last-lecturista-id',
+                      LecturistaID: App.CONFIG.LecturistaID
+                    });
+                  });
+                App.rutas.cleanRutas(function(){
+                  App.rutas.readRutas();
+                });
+              }else{
+                App.rutas.readRutas();
+              }
+            }
+          });
         },
         //error
         function(){

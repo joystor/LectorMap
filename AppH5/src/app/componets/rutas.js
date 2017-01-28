@@ -17,13 +17,25 @@
     },
     events: {
     },
+    cleanRutas:function(callback){
+      delete App.DATOS.recorridos;
+      App.DB
+        .get('recorridos').then(function(r) {
+          var rt = App.DB.remove(r);
+          callback();
+          return rt;
+        })
+        .catch(function(e){
+          callback();
+        });
+    },
     readRutas: function(){
 
       App.API.getRutasLect({
-        id: App.CONFIG.ID_Movil,
+        id: App.CONFIG.LecturistaID,
         onSuccess:function(response){
           if(response==='0'){
-            Materialize.toast('Sin rutas asignadas para hoy', 4000, 'red');
+            Materialize.toast('Sin recorridos asignadas para hoy', 4000, 'red');
             return;
           }
           if(response && response.length > 0){
@@ -40,18 +52,17 @@
             App.DB.put(App.DATOS.recorridos)
               .then(function (response) {
                 App.rutas.showRutas();
-
               })
               .catch(function (err) {
                 console.log(err);
               });
 
           }else{
-            Materialize.toast('Sin rutas', 4000, 'red');
+            Materialize.toast('Sin recorridos', 4000, 'red');
           }
         },
         onCache: function(){
-          Materialize.toast('Rutas en cache', 2000, 'teal darken-1');
+          Materialize.toast('Recorridos en cache', 2000, 'teal darken-1');
           App.rutas.showRutas();
         },
         onError:function(err){
@@ -62,33 +73,20 @@
     showRutas:function(){
       $('#listRecorridos').html('');
       _.each(App.DATOS.recorridos.data, function(o){
-        var cant = o.ruta.length;
+        var cant = o.recorrido.length;
         var html = '<div class="row">'+
             '  <div class="col s12 m6">'+
             '    <div class="card '+(cant===0?'red lighten-1':'blue-grey darken-1')+'">'+
             '      <div class="card-content white-text">'+
-            '        <span class="card-title">'+o.descripcion+'</span>'+
-            '        <p>'+o.fecha+'</p>'+
+            '        <span class="card-title">'+o.ruta+'</span>'+
             '      </div>'+
             '      <div class="card-action">'+
-            '        <a data-idruta="'+o.id+'" data-cantpred="'+cant+'" class="show-clientes" href="#">'+(cant===0?'Sin clientes':'Mostrar clientes ('+cant+')')+'</a>'+
+            '        <a data-idruta="'+o.ruta+'" data-cantpred="'+cant+'" class="show-clientes" href="#">'+(cant===0?'Sin clientes':'Mostrar clientes ('+cant+')')+'</a>'+
             '      </div>'+
             '    </div>'+
             '  </div>'+
             '</div>';
         $('#listRecorridos').append(html);
-        /*App.API.getRutas({
-          id: o.id,
-          onSuccess:function(p){
-            if(p){
-              App.DATOS.rutas.data.push(p);
-              App.rutas.saveRutas();
-            }
-          },
-          onError:function(e){
-            console.log(e);
-          }
-        });*/
       });
       App.rutas.regEventShowClientes();
     },
@@ -112,6 +110,9 @@
           Materialize.toast('Sin Clientes a tomar lectura', 2000, 'red');
         }else if(cant>0){
           console.log(id);
+          $('#button-collapse').sideNav('show');
+          App.predioLectura.setActualRecorrido(id);
+          $('a[href="#stInfo"]').trigger('click');
         }
       });
     }
