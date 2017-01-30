@@ -133,6 +133,8 @@ App.initApp = _.debounce(function() {
   App.BK.enableBK();
   App.BK.saveDB2Server();
 
+  App.loadMapsApi();
+
 
 }, 1000);
 
@@ -160,6 +162,8 @@ App.loadMapsApi = function() {
   if (window.google !== undefined && window.google.maps !== undefined) {
     return;
   }
+  //$.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
+  $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyAoXiiqp3RP3WY9Nd-brwRH5QTCJaVmEh8&sensor=true&callback=App.predioLectura.initMap');
 };
 
 App.bindEvents = function() {
@@ -174,7 +178,6 @@ App.bindEvents = function() {
 
 jQuery(document).ready(function() {
   App.initialize();
-  $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
 });
 
 (function() {

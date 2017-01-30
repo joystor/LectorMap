@@ -1,29 +1,34 @@
 <div id="slide-out" class="side-nav">
-
   <div class="container">
-
-
-    <div class="row">
-      <div class="col s7">
-        <p id="pInfoPredio"></p>
+    <div class="row top-bottom-small">
+          <a id="btnLastPredio" class="col s4 waves-effect waves-light btn"><i class="material-icons">navigate_before</i></a>
+          <a id="btnNextPredio" class="col s4 waves-effect waves-light btn" style="position: fixed; right: 0px;"><i class="material-icons">navigate_next</i></a>
+    </div>
+    <div class="row top-bottom-small">
+      <div class="col s5">
+        <p id="pInfoPredio1" class="top-bottom-small"></p>
       </div>
-      <div class="input-field">
-          <a id="btnLastPredio" class="col s2 waves-effect waves-light btn"><i class="material-icons">navigate_before</i></a>
-          <a id="btnNextPredio" class="col s2 waves-effect waves-light btn"><i class="material-icons">navigate_next</i></a>
+      <div class="col s3 offset-s4">
+        <p id="pInfoPredio2" class="top-bottom-small"></p>
       </div>
-      <div class="row col s12">
-        <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">save</i></a>
+    </div>
+    <div class="row top-bottom-small">
+      <div class="col s12">
+        <p id="pInfoPredio3" class="top-bottom-small"></p>
       </div>
+    </div>
+    <div class="row col s12" style="margin-bottom: 0px;">
+      <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">save</i></a>
     </div>
 
     <div class="row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s3"><a class="active" href="#stInfo"><i class="material-icons">info</i></a></li>
-          <li class="tab col s3"><a href="#stLect"><i class="material-icons">create</i></a></li>
-          <li class="tab col s3"><a href="#stPhoto"><i class="material-icons">camera_alt</i></a></li>
-          <li class="tab col s3"><a href="#stCambios"><i class="material-icons">refresh</i></a></li>
-          <li class="tab col s3"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">room</i></a></li>
+          <li class="tab col s1"><a class="active" href="#stInfo"><i class="material-icons">info</i></a></li>
+          <li class="tab col s1"><a href="#stLect"><i class="material-icons">create</i></a></li>
+          <li class="tab col s1"><a href="#stPhoto"><i class="material-icons">camera_alt</i></a></li>
+          <li class="tab col s1"><a href="#stCambios"><i class="material-icons">refresh</i></a></li>
+          <li class="tab col s1"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">room</i></a></li>
         </ul>
       </div>
       <div id="stInfo" class="col s12">

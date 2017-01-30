@@ -12,11 +12,11 @@
             tipo: lect.tipo,
             folio: lect.folio,
             lectura: lect.lectura,
-            anomalia: lect.anomalia,
+            //anomalia: lect.anomalia,
             posicion_xy: lect.posicion_xy,
             recorrido_id: lect.recorrido_id,
             idsmartphone: App.CONFIG.ID_Movil,
-            incidencia: lect.incidencia
+            incidencia: lect.anomalia
 
             //"vivienda": "0",
             //"toma": "1",
@@ -70,10 +70,10 @@
           onSuccess: function(o) {
             lect.lectura_id = o.id;
             lect.is_saved = true;
+            Materialize.toast('Lectura con folio:' + lect.folio + " en servidor", 2000, 'blue-grey');
             App.DB.put(App.DATOS.lecturas)
               .then(function(l) {
                 App.DATOS.lecturas._rev = l.rev;
-                Materialize.toast('Lectura con folio:' + o.folio + " en servidor", 2000, 'blue-grey');
                 App.BK.proccessImagenes();
               });
           },
