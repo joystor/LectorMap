@@ -1,10 +1,13 @@
 <div id="slide-out" class="side-nav">
   <div class="container">
     <div class="row top-bottom-small">
-          <a id="btnLastPredio" class="col s4 waves-effect waves-light btn"><i class="material-icons">navigate_before</i></a>
-          <a id="btnNextPredio" class="col s4 waves-effect waves-light btn" style="position: fixed; right: 0px;"><i class="material-icons">navigate_next</i></a>
+          <a id="btnLastPredio" class="col s4 waves-effect waves-light btn"><i class="material-icons">&#xE408;</i></a>
+          <a id="btnNextPredio" class="col s4 waves-effect waves-light btn" style="position: fixed; right: 0px;"><i class="material-icons">&#xE409;</i></a>
     </div>
     <div class="row top-bottom-small">
+      <div class="col s12">
+        <p id="pInfoLecturistaNom" class="top-bottom-small">Lecturista Nombre</p>
+      </div>
       <div class="col s5">
         <p id="pInfoPredio1" class="top-bottom-small"></p>
       </div>
@@ -18,17 +21,17 @@
       </div>
     </div>
     <div class="row col s12" style="margin-bottom: 0px;">
-      <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">save</i></a>
+      <a id="btnSaveLectura" class="waves-effect waves-light btn"><i class="material-icons">&#xE161;</i></a>
     </div>
 
     <div class="row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s1"><a class="active" href="#stInfo"><i class="material-icons">info</i></a></li>
-          <li class="tab col s1"><a href="#stLect"><i class="material-icons">create</i></a></li>
-          <li class="tab col s1"><a href="#stPhoto"><i class="material-icons">camera_alt</i></a></li>
-          <li class="tab col s1"><a href="#stCambios"><i class="material-icons">refresh</i></a></li>
-          <li class="tab col s1"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">room</i></a></li>
+          <li class="tab col s1"><a class="active" href="#stInfo"><i class="material-icons">&#xE88E;</i></a></li>
+          <li class="tab col s1"><a href="#stLect"><i class="material-icons">&#xE150;</i></a></li>
+          <li class="tab col s1"><a href="#stPhoto"><i class="material-icons">&#xE3B0;</i></a></li>
+          <li class="tab col s1"><a href="#stCambios"><i class="material-icons">&#xE145;</i></a></li>
+          <li class="tab col s1"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">&#xE8B4;</i></a></li>
         </ul>
       </div>
       <div id="stInfo" class="col s12">
@@ -67,27 +70,55 @@
               <div class="card-panel red lighten-5">
                 <select id="selTipInc" class="validate">
                   <option value="0" selected>Seleccione una opción</option>
-                  <option value="1">1	- Medidor detenido</option>
-                  <option value="2">2	- Medidor descompuesto</option>
-                  <option value="3">3	- Se nego a la toma de lectura</option>
-                  <option value="4">4	- Medidor invertido</option>
-                  <option value="5">5	- Medidor alterado</option>
-                  <option value="6">6	- Lectura ilegible</option>
-                  <option value="9">9	- Medidor desconectado</option>
-                  <option value="10">10	- Deshabitado sin medidor</option>
-                  <option value="14">14	- Domicilio cerrado</option>
-                  <option value="15">15	- Deshabitado con medidor</option>
-                  <option value="16">16	- Lote sin toma</option>
-                  <option value="36">36	- No localizado</option>
-                  <option value="39">39	- Lote c/toma s/medidor</option>
-                  <option value="40">40	- No existe cuadro</option>
-                  <option value="42">42	- Sin medidor</option>
-                  <option value="44">44	- Lote c/toma c/medidor</option>
-                  <option value="45">45	- Predio unificado o absorbido</option>
-                  <option value="47">47	- Duplicado</option>
-                  <option value="49">49	- Vuelta de medidor</option>
+                  <option value="A">A	-	medidor alterado</option>
+                  <option value="B">B	-	lote sin toma</option>
+                  <option value="C">C	-	domicilio cerrado</option>
+                  <option value="D">D	-	Medidor descompuesto</option>
+                  <option value="E">E	-	Deshabitado con medidor</option>
+                  <option value="F">F	-	Medidor detenido</option>
+                  <option value="G">G	-	No localizado</option>
+                  <option value="H">H	-	Deshabitado sin medidor</option>
+                  <option value="J">J	-	Lote c/toma s/medidor</option>
+                  <option value="K">K	-	No existe cuadro</option>
+                  <option value="L">L	-	Lectura ilegible</option>
+                  <option value="M">M	-	Sin medidor</option>
+                  <option value="N">N	-	Se nego a la toma de lectura</option>
+                  <option value="O">O	-	Lote c/toma c/medidor</option>
+                  <option value="R">R	-	Duplicado</option>
+                  <option value="S">S	-	Medidor desconectado</option>
+                  <option value="V">V	-	Vuelta de medidor</option>
                 </select>
-                <label>Tipo de incidencia</label>
+                <label>Anomalía</label>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="card-panel blue lighten-4">
+                <select id="selLectAnom" class="validate material-select">
+                  <option value="0" selected>Seleccione una opción</option>
+                  <option value="1" data-anoidant="F">1 - MEDIDOR DETENIDO</option>
+                  <option value="2" data-anoidant="D">2 - MEDIDOR DESCOMPUESTO</option>
+                  <option value="3" data-anoidant="N">3 - SE NEGO A LA TOMA DE LECTURA</option>
+                  <option value="5" data-anoidant="A">5 - MEDIDOR ALTERADO</option>
+                  <option value="6" data-anoidant="L">6 - LECTURA ILEGIBLE</option>
+                  <option value="9" data-anoidant="S">9 - MEDIDOR DESCONECTADO</option>
+                  <option value="10" data-anoidant="H">10 - DESHABITADO SIN MEDIDOR</option>
+                  <option value="14" data-anoidant="C">14 - DOMICILIO CERRADO</option>
+                  <option value="15" data-anoidant="E">15 - DESHABITADO CON MEDIDOR</option>
+                  <option value="16" data-anoidant="B">16 - LOTE SIN TOMA</option>
+                  <option value="36" data-anoidant="G">36 - NO LOCALIZADO</option>
+                  <option value="39" data-anoidant="J">39 - LOTE C/TOMA S/MEDIDOR</option>
+                  <option value="40" data-anoidant="K">40 - NO EXISTE CUADRO</option>
+                  <option value="42" data-anoidant="M">42 - SIN MEDIDOR</option>
+                  <option value="44" data-anoidant="O">44 - LOTE C/TOMA C/MEDIDOR</option>
+                  <option value="47" data-anoidant="R">47 - DUPLICADO</option>
+                  <option value="49" data-anoidant="V">49 - VUELTA DE MEDIDOR</option>
+                </select>
+                <label for="selLectAnom">Lecturas Anomalias</label>
               </div>
             </div>
           </div>
@@ -111,6 +142,10 @@
         </div>
       </div>
 
+
+
+
+
 <!-- Inicio de Cambios -->
       <div id="stCambios" class="col s12">
 
@@ -125,65 +160,34 @@
                 <option value="4">4	- Dentro no accesible al lecturista.</option>
                 <option value="5">5	- Sin columpio visible</option>
               </select>
-              <label for="selMedidoresUbicacionPred">Medidores Ubicación Pred</label>
+              <label for="selMedidoresUbicacionPred">Medidor Ubicación</label>
             </div>
           </div>
         </div>
+
 
         <div class="row">
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selAlertas" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1 -	Medidor oculto en arbustos o pasto</option>
+                <option value="1">1 - Medidor oculto en arbustos o pasto</option>
                 <option value="2">2	- Zona peligrosa</option>
                 <option value="3">3	- Usuario agresivo</option>
                 <option value="4">4	- Mascotas sin control</option>
                 <option value="5">5	- Otro (Especifique)</option>
               </select>
-              <label for="selAlertas">Alertas</label>
+              <label for="selAlertas">Comentario sobre el cliente</label>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <div class="card-panel blue lighten-4">
-              <select id="selLectAnom" class="validate material-select">
-                <option value="0" selected>Seleccione una opción</option>
-                <option value="1" data-anoidant="F">1 -	MEDIDOR DETENIDO</option>
-                <option value="2" data-anoidant="D">2 -	MEDIDOR DESCOMPUESTO</option>
-                <option value="3" data-anoidant="N">3 -	SE NEGO A LA TOMA DE LECTURA</option>
-                <option value="5" data-anoidant="A">5 -	MEDIDOR ALTERADO</option>
-                <option value="6" data-anoidant="L">6 -	LECTURA ILEGIBLE</option>
-                <option value="9" data-anoidant="S">9 -	MEDIDOR DESCONECTADO</option>
-                <option value="10" data-anoidant="H">10 -	DESHABITADO SIN MEDIDOR</option>
-                <option value="14" data-anoidant="C">14 -	DOMICILIO CERRADO</option>
-                <option value="15" data-anoidant="E">15 -	DESHABITADO CON MEDIDOR</option>
-                <option value="16" data-anoidant="B">16 -	LOTE SIN TOMA</option>
-                <option value="36" data-anoidant="G">36 -	NO LOCALIZADO</option>
-                <option value="39" data-anoidant="J">39 -	LOTE C/TOMA S/MEDIDOR</option>
-                <option value="40" data-anoidant="K">40 -	NO EXISTE CUADRO</option>
-                <option value="42" data-anoidant="M">42 -	SIN MEDIDOR</option>
-                <option value="44" data-anoidant="O">44 -	LOTE C/TOMA C/MEDIDOR</option>
-                <option value="47" data-anoidant="R">47 -	DUPLICADO</option>
-                <option value="49" data-anoidant="V">49 -	VUELTA DE MEDIDOR</option>
-              </select>
-              <label for="selLectAnom">Lecturas Anomalias</label>
-            </div>
-          </div>
-        </div>
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel lime lighten-4">
-              <select id="selConViv" class="validate material-select">
-                <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1	- CERRADA</option>
-                <option value="3">3	- HABITADO</option>
-                <option value="4">4	- DESHABITADO</option>
-              </select>
-              <label for="selConViv">Condición vivienda</label>
+            <div class="card-panel blue lighten-5">
+              <input id="inpPresSerie" type="number" class="validate" maxlength="10">
+              <label for="inpPresSerie">Precinto serie</label>
             </div>
           </div>
         </div>
@@ -197,17 +201,36 @@
                 <option value="2">2	- Rojo</option>
                 <option value="3">3	- Plomo</option>
               </select>
-              <label for="selPreCol">Precinto colores</label>
+              <label for="selPreCol">Precinto color</label>
             </div>
           </div>
         </div>
+
+
+
+
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="card-panel lime lighten-4">
+              <select id="selConViv" class="validate material-select">
+                <option value="0" selected>Seleccione una opción</option>
+                <option value="1">1	- Cerrada</option>
+                <option value="3">3	- Habitado</option>
+                <option value="4">4	- Deshabitado</option>
+              </select>
+              <label for="selConViv">Ocupación inmuble</label>
+            </div>
+          </div>
+        </div>
+
+
 
         <div class="row">
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selTipEdif" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1 -	Construido</option>
+                <option value="1">1 - Construido</option>
                 <option value="2">2	- Ruinas</option>
                 <option value="3">3	- Baldio</option>
                 <option value="4">4	- Lote baldio</option>
@@ -219,142 +242,142 @@
           </div>
         </div>
 
-        <div class="row">
+        <!--div class="row">
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selEstCom" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1 -	Activo</option>
-                <option value="2">2 -	Baja</option>
-                <option value="3">3 -	En trámite</option>
-                <option value="4">4 -	Notificado</option>
-                <option value="5">5 -	Suspensión temporal</option>
-                <option value="6">6 -	Restricción moroso</option>
-                <option value="7">7 -	Restricción clandestina</option>
-                <option value="8">8 -	Restricción casa deshabitada</option>
-                <option value="9">9 -	Restricción lote baldio</option>
-                <option value="10">10 -	No facturable</option>
-                <option value="11">11 -	En proceso legal</option>
-                <option value="12">12 -	Público en general</option>
-                <option value="13">13 -	Incobrable</option>
+                <option value="1">1 - Activo</option>
+                <option value="2">2 - Baja</option>
+                <option value="3">3 - En trámite</option>
+                <option value="4">4 - Notificado</option>
+                <option value="5">5 - Suspensión temporal</option>
+                <option value="6">6 - Restricción moroso</option>
+                <option value="7">7 - Restricción clandestina</option>
+                <option value="8">8 - Restricción casa deshabitada</option>
+                <option value="9">9 - Restricción lote baldio</option>
+                <option value="10">10 - No facturable</option>
+                <option value="11">11 - En proceso legal</option>
+                <option value="12">12 - Público en general</option>
+                <option value="13">13 - Incobrable</option>
               </select>
               <label for="">Estado Comercial</label>
             </div>
           </div>
-        </div>
+        </div-->
 
         <div class="row">
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selTipServ" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1 -	Doméstico</option>
-                <option value="2">2 -	Comercial</option>
-                <option value="3">3 -	Industrial</option>
-                <option value="4">4 -	Predio Público</option>
-                <option value="5">5 -	Derivación</option>
-                <option value="6">6 -	Agua tratada</option>
-                <option value="7">7 -	Pozo propio</option>
+                <option value="1">1 - Doméstico</option>
+                <option value="2">2 - Comercial</option>
+                <option value="3">3 - Industrial</option>
+                <option value="4">4 - Predio Público</option>
+                <option value="5">5 - Derivación</option>
+                <option value="6">6 - Agua tratada</option>
+                <option value="7">7 - Pozo propio</option>
               </select>
               <label for="selTipServ">Tipo de Servicio</label>
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <!--div class="row">
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selTipLec" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="2">2	HH Teclado</option>
-                <option value="3">3	HH Electrónico</option>
-                <option value="4">4	Radio</option>
+                <option value="2">2	- HH Teclado</option>
+                <option value="3">3	- HH Electrónico</option>
+                <option value="4">4	- Radio</option>
               </select>
               <label for="selTipLec">Tipo Lectura</label>
             </div>
           </div>
-        </div>
+        </div-->
 
-        <div class="row">
+        <!--div class="row">
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selEstServ" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1 -	Real</option>
+                <option value="1">1 - Real</option>
                 <option value="2">2	- Baja</option>
                 <option value="3">3	- En contratación</option>
               </select>
               <label for="selEstServ">Estado Servicio</label>
             </div>
           </div>
-        </div>
+        </div-->
 
         <div class="row">
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selGiros" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1	Indefinido</option>
-                <option value="2">2	SECASX</option>
-                <option value="3">3	SEMI-HUMEDAS</option>
-                <option value="4">4	HUMEDAS</option>
-                <option value="5">5	Agencia automotriz/maquin</option>
-                <option value="6">6	Alimentos/Comida</option>
-                <option value="7">7	Autolavado</option>
-                <option value="8">8	Paq/Fletes/Autotransporte</option>
-                <option value="9">9	Baños Públicos</option>
-                <option value="10">10	Bodega</option>
-                <option value="11">11	CANTINA</option>
-                <option value="12">12	CARNICERIA</option>
-                <option value="13">13	Centro Comercial</option>
-                <option value="14">14	Deportivo</option>
-                <option value="15">15	Embotelladora/Purificador</option>
-                <option value="16">16	Empacadora/Distribuidora</option>
-                <option value="17">17	Escuela Pública</option>
-                <option value="18">18	Escuela Privada</option>
-                <option value="19">19	Fábrica</option>
-                <option value="20">20	FARMACIA</option>
-                <option value="21">21	Gasolineria/Gasera</option>
-                <option value="22">22	GIMNASIO</option>
-                <option value="23">23	Habitacional</option>
-                <option value="24">24	Clin/Hosp/Lab</option>
-                <option value="25">25	Hotel/Motel</option>
-                <option value="26">26	Industria Aceitera</option>
-                <option value="27">27	Industria Lácteos</option>
-                <option value="28">28	Industria Mecánica</option>
-                <option value="29">29	Industria Papelera</option>
-                <option value="30">30	Industria Textil</option>
-                <option value="31">31	Lavanderia/Tintorería</option>
-                <option value="32">32	Local Comercial</option>
-                <option value="33">33	Materiales Construcción</option>
-                <option value="34">34	Metalurgica</option>
-                <option value="35">35	MISCELANEA</option>
-                <option value="36">36	Molino</option>
-                <option value="37">37	Mueblería</option>
-                <option value="38">38	Oficinas</option>
-                <option value="39">39	Otros</option>
-                <option value="40">40	Panificadora/Pastelería</option>
-                <option value="41">41	PESCADOS Y MARISCOS</option>
-                <option value="42">42	POLLERIA</option>
-                <option value="43">43	Propiedad Pública Estatal</option>
-                <option value="44">44	Propiedad Pública Federal</option>
-                <option value="45">45	Propiedad Pública Municip</option>
-                <option value="46">46	Productos Químicos</option>
-                <option value="47">47	RECAUDERIA</option>
-                <option value="48">48	Refaccionaria</option>
-                <option value="49">49	Restaurant/Bar</option>
-                <option value="50">50	Salón de Fiestas</option>
-                <option value="51">51	Taller Mecánico</option>
-                <option value="52">52	Telefonía</option>
-                <option value="53">53	Templos/Iglesias</option>
-                <option value="54">54	ZAPATERIA</option>
+                <option value="1">1	- Indefinido</option>
+                <option value="2">2	- SECASX</option>
+                <option value="3">3	- SEMI-HUMEDAS</option>
+                <option value="4">4	- HUMEDAS</option>
+                <option value="5">5	- Agencia automotriz/maquin</option>
+                <option value="6">6	- Alimentos/Comida</option>
+                <option value="7">7	- Autolavado</option>
+                <option value="8">8	- Paq/Fletes/Autotransporte</option>
+                <option value="9">9	- Baños Públicos</option>
+                <option value="10">10	- Bodega</option>
+                <option value="11">11	- CANTINA</option>
+                <option value="12">12	- CARNICERIA</option>
+                <option value="13">13	- Centro Comercial</option>
+                <option value="14">14	- Deportivo</option>
+                <option value="15">15	- Embotelladora/Purificador</option>
+                <option value="16">16	- Empacadora/Distribuidora</option>
+                <option value="17">17	- Escuela Pública</option>
+                <option value="18">18	- Escuela Privada</option>
+                <option value="19">19	- Fábrica</option>
+                <option value="20">20	- FARMACIA</option>
+                <option value="21">21	- Gasolineria/Gasera</option>
+                <option value="22">22	- GIMNASIO</option>
+                <option value="23">23	- Habitacional</option>
+                <option value="24">24	- Clin/Hosp/Lab</option>
+                <option value="25">25	- Hotel/Motel</option>
+                <option value="26">26	- Industria Aceitera</option>
+                <option value="27">27	- Industria Lácteos</option>
+                <option value="28">28	- Industria Mecánica</option>
+                <option value="29">29	- Industria Papelera</option>
+                <option value="30">30	- Industria Textil</option>
+                <option value="31">31	- Lavanderia/Tintorería</option>
+                <option value="32">32	- Local Comercial</option>
+                <option value="33">33	- Materiales Construcción</option>
+                <option value="34">34	- Metalurgica</option>
+                <option value="35">35	- MISCELANEA</option>
+                <option value="36">36	- Molino</option>
+                <option value="37">37	- Mueblería</option>
+                <option value="38">38	- Oficinas</option>
+                <option value="39">39	- Otros</option>
+                <option value="40">40	- Panificadora/Pastelería</option>
+                <option value="41">41	- PESCADOS Y MARISCOS</option>
+                <option value="42">42	- POLLERIA</option>
+                <option value="43">43	- Propiedad Pública Estatal</option>
+                <option value="44">44	- Propiedad Pública Federal</option>
+                <option value="45">45	- Propiedad Pública Municip</option>
+                <option value="46">46	- Productos Químicos</option>
+                <option value="47">47	- RECAUDERIA</option>
+                <option value="48">48	- Refaccionaria</option>
+                <option value="49">49	- Restaurant/Bar</option>
+                <option value="50">50	- Salón de Fiestas</option>
+                <option value="51">51	- Taller Mecánico</option>
+                <option value="52">52	- Telefonía</option>
+                <option value="53">53	- Templos/Iglesias</option>
+                <option value="54">54	- ZAPATERIA</option>
               </select>
-              <label for="selGiros">Giros</label>
+              <label for="selGiros">Giro</label>
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <!--div class="row">
           <div class="input-field col s12">
             <div class="card-panel lime lighten-4">
               <select id="selLecturista" class="validate material-select">
@@ -445,21 +468,21 @@
               <label for="selLecturista">Lecturistas</label>
             </div>
           </div>
-        </div>
+        </div-->
 
         <div class="row">
           <div class="input-field col s12">
             <div class="card-panel blue lighten-4">
               <select id="selRepGest" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
-                <option value="1">1	Fuga en Toma domiciliaria FTA</option>
-                <option value="2">2	Fuga en medidor FMA</option>
-                <option value="3">3	Fuga en columpio FCL</option>
-                <option value="4">4	Desazolve de albañal DTI</option>
-                <option value="5">5	Tapar bache BA</option>
-                <option value="6">6	Retirar escombro RE</option>
-                <option value="7">7	Baja presión BP</option>
-                <option value="8">8	 Falta de Agua FA</option>
+                <option value="1">1	- Fuga en Toma domiciliaria FTA</option>
+                <option value="2">2	- Fuga en medidor FMA</option>
+                <option value="3">3	- Fuga en columpio FCL</option>
+                <option value="4">4	- Desazolve de albañal DTI</option>
+                <option value="5">5	- Tapar bache BA</option>
+                <option value="6">6	- Retirar escombro RE</option>
+                <option value="7">7	- Baja presión BP</option>
+                <option value="8">8	- Falta de Agua FA</option>
               </select>
               <label for="selRepGest">Reporte Gestión</label>
             </div>
