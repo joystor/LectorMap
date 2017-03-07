@@ -4,7 +4,7 @@
   App.BK = {
     proccessNextLectura: function() {
       var lect = _.find(App.DATOS.lecturas.data, function(o) {
-        return o.is_saved === false;
+        return o.is_saved === false && o.have_error===undefined;
       });
       if (lect) {
         App.API.setLectura({
@@ -13,7 +13,7 @@
             folio: lect.folio,
             lectura: lect.lectura,
             //anomalia: lect.anomalia,
-            posicion_xy: lect.posicion_xy,
+            posicion_xy: lect.posicion_xy || '0,0',
             recorrido_id: lect.recorrido_id,
             idsmartphone: App.CONFIG.ID_Movil,
             incidencia: lect.anomalia
@@ -79,6 +79,13 @@
           },
           onError: function(err) {
             console.log(err);
+            Materialize.toast('Error en server con folio:' + lect.folio + ':'+ err, 2000, 'red');
+            lect.have_error = true;
+            App.DB.put(App.DATOS.lecturas)
+              .then(function(l) {
+                App.DATOS.lecturas._rev = l.rev;
+              });
+            $('#btnSaveLectura').removeClass('disabled')
           }
         });
       }

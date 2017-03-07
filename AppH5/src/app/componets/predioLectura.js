@@ -142,33 +142,33 @@
         var currLect = _.findWhere(App.DATOS.lecturas.data,{
           recorrido_id: currPred.id,
           fecha: VARS.currDate,
-          ruta_id: App.predioLectura.currentRuta.ruta
+          ruta_id: App.predioLectura.currentRuta.ruta,
+          have_error: undefined
         });
         if(currLect){
-          $('#btnSaveLectura').addClass('disabled');
-
           $('#selTipInc').material_select('destroy');
           $('#selTipInc').val(currLect.anomalia);
-          $('#selTipInc').prop('disabled',true);
-          $('#selTipInc').material_select();
 
           $('#inplect').val(currLect.lectura);
-          $('#inplect').prop('disabled',true);
 
           currLect.imagenes.forEach(function(img) {
             App.predioLectura.addPhoto( img );
           });
 
-
-
           $('.material-select').material_select('destroy');
           _.each(currLect.cambios_selects, function(v,i) {
             $('#'+i).val(v);
           });
-          $('.material-select').prop('disabled',true);
-          $('.material-select').material_select();
 
-          $('.btnFotoEvnt').hide();
+          if(currLect.have_error!==true){
+            $('#inplect').prop('disabled',true);
+            $('.material-select').prop('disabled',true);
+            $('.btnFotoEvnt').hide();
+            $('#selTipInc').prop('disabled',true);
+            $('#btnSaveLectura').addClass('disabled');
+          }
+          $('#selTipInc').material_select();
+          $('.material-select').material_select();
         }
       }
 
