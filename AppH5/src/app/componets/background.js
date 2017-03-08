@@ -16,7 +16,17 @@
             posicion_xy: lect.posicion_xy || '0,0',
             recorrido_id: lect.recorrido_id,
             idsmartphone: App.CONFIG.ID_Movil,
-            incidencia: lect.anomalia
+            incidencia: lect.anomalia,
+
+            ubicacion_del_medidor: lect.ubicacion_del_medidor,
+            comentario_alerta: lect.comentario_alerta,
+            //input de comentarios  inpComentario
+            serie_precinto: lect.serie_precinto,
+            color_precinto: lect.color_precinto,
+            tipo_de_edificacion: lect.tipo_de_edificacion,
+            usodeservicio: lect.usodeservicio,
+            giro: lect.giro,
+            reporte_gestion: lect.reporte_gestion
 
             //"vivienda": "0",
             //"toma": "1",
@@ -197,13 +207,8 @@
     sendGPS2Server: function(pos) {
       var lat = App.GPS.currPos.lat;
       var lng = App.GPS.currPos.lng;
-      var ruta_id = 0;
-      if (App.DATOS.recorridos && App.DATOS.recorridos.data && App.DATOS.recorridos.data[0] && App.DATOS.recorridos.data[0].rutas_id) {
-        ruta_id = App.DATOS.recorridos.data[0].rutas_id;
-      }
-      if (ruta_id === 0) {
-        return;
-      }
+      var ruta_id = App.predioLectura.currentRuta.ruta || 0;
+      
       App.API.setRastreo({
         id: App.CONFIG.ID_Movil,
         data: {

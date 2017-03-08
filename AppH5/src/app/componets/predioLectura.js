@@ -260,6 +260,28 @@
       };
       lect.anomalia = $('#selTipInc option:checked').val() || '0';
 
+      /*Anomalía   anteriormente era Tipo de Incidencia		incidencia
+      Lecturas Anomalias				?
+      Medidor Ubicación 				ubicacion_del_medidor
+      Comentario sobre el cliente 	comentario_alerta
+      Precinto serie 					serie_precinto
+      Precinto color					color_precinto
+      Ocupación inmueble				?
+      Tipo Edificación				tipo_de_edificacion
+      Tipo de Servicio				usodeservicio
+      Giro							giro
+      Reporte Gestión					reporte_gestion*/
+
+      lect.ubicacion_del_medidor = $('#selMedidoresUbicacionPred option:checked').val();
+      lect.comentario_alerta = $('#selAlertas option:checked').val();
+      //input de comentarios  inpComentario
+      lect.serie_precinto = $('#inpPresSerie').val();
+      lect.color_precinto = $('#selPreCol option:checked').val();
+      lect.tipo_de_edificacion = $('#selTipEdif option:checked').val();
+      lect.usodeservicio = $('#selTipServ option:checked').val();
+      lect.giro = $('#selGiro option:checked').val();
+      lect.reporte_gestion = $('#selRepGest option:checked').val();
+
       lect.posicion_xy = App.GPS.currPos.lng+','+App.GPS.currPos.lat;
       lect.ruta_id = App.predioLectura.currentRuta.ruta;
       lect.recorrido_id = App.predioLectura.currentRuta.recorrido[App.predioLectura.navigator.current].id;
