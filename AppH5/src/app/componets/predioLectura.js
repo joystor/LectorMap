@@ -32,6 +32,13 @@
      $('#selTipInc').material_select();
      $('.material-select').material_select('destroy');
      $('.material-select').material_select();
+
+     $('#pPredioLectura input[type=text]').focusout(function(){
+       var t = this;
+       setTimeout(function(){
+         $('label[for="'+t.id+'"]').addClass('active');
+       },20);
+    });
     },
     initMap: function(){
       App.predioLectura.gmap = new google.maps.Map(document.getElementById('mapPredio'), {
@@ -59,7 +66,8 @@
       "click #btnNextPredio": "showNextPredio",
       "click #btnShowMapPredio": "showMapPredio",
       "change input[name=tiplect]": "selTipoLectura",
-      "change #selAlertas":"onChangeSelAlertas"
+      "change #selAlertas":"onChangeSelAlertas",
+      "change #selTipInc":"onChangeselTipInc"
     },
     cleanForms:function(){
       $('#pPredioLectura input[type="radio"]').prop('checked', false);
@@ -236,7 +244,8 @@
       if($('#btnSaveLectura').hasClass('disabled')===true){
         return;
       }
-      if($('#inplect').val() === ''){
+      var tipAnom = $('#selTipInc option:checked').val();
+      if($('#inplect').val() === '' && (tipAnom === '0' || tipAnom === undefined)){
         Materialize.toast('Agrega una lectura', 2000, 'red');
         return;
       }
@@ -377,6 +386,15 @@
         $('label[for="secComentarios"]').addClass('active');
       }else{
         $('#secComentarios').hide();
+      }
+    },
+    onChangeselTipInc:function(){
+      var tip = $('#selTipInc option:checked').val();
+      if(tip==='0'){
+        $('#inplect').prop('disabled', false);
+      }else{
+        $('#inplect').val('');
+        $('#inplect').prop('disabled', true);
       }
     }
   });
