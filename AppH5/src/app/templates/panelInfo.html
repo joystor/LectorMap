@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row top-bottom-small">
           <a id="btnLastPredio" class="col s4 waves-effect waves-light btn"><i class="material-icons">&#xE408;</i></a>
+          <p id="pInfoPredio2" class="col s2" style="top: 19px;position: absolute;font-size: 18px;"></p>
           <a id="btnNextPredio" class="col s4 waves-effect waves-light btn" style="position: fixed; right: 0px;"><i class="material-icons">&#xE409;</i></a>
     </div>
     <div class="row top-bottom-small">
@@ -11,9 +12,9 @@
       <div class="col s5">
         <p id="pInfoPredio1" class="top-bottom-small"></p>
       </div>
-      <div class="col s3 offset-s4">
+      <!--div class="col s3 offset-s4">
         <p id="pInfoPredio2" class="top-bottom-small"></p>
-      </div>
+      </div-->
     </div>
     <div class="row top-bottom-small">
       <div class="col s12">
@@ -47,7 +48,7 @@
               <div class="input-field col s12">
                 <div class="card-panel blue lighten-5">
                   <input id="inplect" type="text" class="validate" maxlength="10">
-                  <label for="inplect">Lectura</label>
+                  <label for="inplect" class="active">Lectura</label>
                 </div>
               </div>
             </div>
@@ -180,6 +181,12 @@
               <label for="selAlertas">Comentario sobre el cliente</label>
             </div>
           </div>
+          <div id="secComentarios" class="input-field col s12" style="display:none">
+            <div class="card-panel blue lighten-5">
+              <input id="inpComentario" type="text" class="validate" maxlength="10">
+              <label for="inpComentario">Comentarios</label>
+            </div>
+          </div>
         </div>
 
 
@@ -218,7 +225,7 @@
                 <option value="3">3	- Habitado</option>
                 <option value="4">4	- Deshabitado</option>
               </select>
-              <label for="selConViv">Ocupación inmuble</label>
+              <label for="selConViv">Ocupación inmueble</label>
             </div>
           </div>
         </div>

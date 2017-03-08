@@ -58,7 +58,8 @@
       "click #btnLastPredio": "showLastPredio",
       "click #btnNextPredio": "showNextPredio",
       "click #btnShowMapPredio": "showMapPredio",
-      "change input[name=tiplect]": "selTipoLectura"
+      "change input[name=tiplect]": "selTipoLectura",
+      "change #selAlertas":"onChangeSelAlertas"
     },
     cleanForms:function(){
       $('#pPredioLectura input[type="radio"]').prop('checked', false);
@@ -80,6 +81,10 @@
       $('.material-select').material_select();
       $('#secPhoto').html('');
       $('#pInfoClient').html('');
+      $('label[for="inplect"]').addClass('active');
+      $('#inpComentario').val('');
+      $('#secComentarios').hide();
+      $('label[for="secComentarios"]').addClass('active');
     },
 
     btnFoto: function(){
@@ -186,6 +191,9 @@
       self.navigator.current++;
       var currPred = self.currentRuta.recorrido[self.navigator.current];
       if(currPred){
+        $('#pInfoLecturistaNom').html(
+          '<strong>Lecturista:</strong> '+self.currentRuta.nombre_lecturista
+        );
         $('#pInfoPredio1').html(
           '<strong>Folio:</strong> '+currPred.folio
         );
@@ -360,6 +368,16 @@
       App.predioLectura.gmap.setZoom( 17 );
       App.predioLectura.currPredioMarkerPos.setPosition( latlng );
       App.predioLectura.gmap.setCenter( latlng );
+    },
+    onChangeSelAlertas:function(){
+      var alrt = $('#selAlertas option:checked').val();
+      if(alrt==='5'){
+        $('#secComentarios').show();
+        $('#inpComentario').focus();
+        $('label[for="secComentarios"]').addClass('active');
+      }else{
+        $('#secComentarios').hide();
+      }
     }
   });
 })();
