@@ -29,7 +29,7 @@
       );
 
      $('#pPredioLectura ul.tabs').tabs();
-     $('#selTipInc').material_select();
+     $('#selTipAnom').material_select();
      $('.material-select').material_select('destroy');
      $('.material-select').material_select();
 
@@ -67,7 +67,7 @@
       "click #btnShowMapPredio": "showMapPredio",
       "change input[name=tiplect]": "selTipoLectura",
       "change #selAlertas":"onChangeSelAlertas",
-      "change #selTipInc":"onChangeselTipInc"
+      "change #selTipAnom":"onChangeselTipAnom"
     },
     cleanForms:function(){
       $('#pPredioLectura input[type="radio"]').prop('checked', false);
@@ -79,10 +79,10 @@
       $('#inpObserv').prop('disabled', false);
       $('#secDatosLectura label').removeClass('active');
       $('#btnFoto').removeClass('disabled');
-      $('#selTipInc').material_select('destroy');
-      $('#selTipInc').val('');
-      $('#selTipInc').prop('disabled',false);
-      $('#selTipInc').material_select();
+      $('#selTipAnom').material_select('destroy');
+      $('#selTipAnom').val('');
+      $('#selTipAnom').prop('disabled',false);
+      $('#selTipAnom').material_select();
       $('.material-select').val('');
       $('.material-select').prop('disabled',false);
       $('.material-select').material_select('destroy');
@@ -159,8 +159,8 @@
           have_error: false
         });
         if(currLect){
-          $('#selTipInc').material_select('destroy');
-          $('#selTipInc').val(currLect.anomalia);
+          $('#selTipAnom').material_select('destroy');
+          $('#selTipAnom').val(currLect.anomalia);
 
           $('#inplect').val(currLect.lectura);
 
@@ -177,10 +177,10 @@
             $('#inplect').prop('disabled',true);
             $('.material-select').prop('disabled',true);
             $('.btnFotoEvnt').hide();
-            $('#selTipInc').prop('disabled',true);
+            $('#selTipAnom').prop('disabled',true);
             $('#btnSaveLectura').addClass('disabled');
           }
-          $('#selTipInc').material_select();
+          $('#selTipAnom').material_select();
           $('.material-select').material_select();
         }
       }
@@ -244,7 +244,7 @@
       if($('#btnSaveLectura').hasClass('disabled')===true){
         return;
       }
-      var tipAnom = $('#selTipInc option:checked').val();
+      var tipAnom = $('#selTipAnom option:checked').val();
       if($('#inplect').val() === '' && (tipAnom === '0' || tipAnom === undefined)){
         Materialize.toast('Agrega una lectura', 2000, 'red');
         return;
@@ -258,7 +258,7 @@
         lectura: $('#inplect').val(),
         incidencia:0
       };
-      lect.anomalia = $('#selTipInc option:checked').val() || '0';
+      lect.anomalia = $('#selTipAnom option:checked').val() || '0';
 
       /*Anomalía   anteriormente era Tipo de Incidencia		incidencia
       Lecturas Anomalias				?
@@ -272,15 +272,17 @@
       Giro							giro
       Reporte Gestión					reporte_gestion*/
 
-      lect.ubicacion_del_medidor = $('#selMedidoresUbicacionPred option:checked').val();
-      lect.comentario_alerta = $('#selAlertas option:checked').val();
-      //input de comentarios  inpComentario
-      lect.serie_precinto = $('#inpPresSerie').val();
-      lect.color_precinto = $('#selPreCol option:checked').val();
-      lect.tipo_de_edificacion = $('#selTipEdif option:checked').val();
-      lect.usodeservicio = $('#selTipServ option:checked').val();
-      lect.giro = $('#selGiro option:checked').val();
+      lect.cambio_ubicaciondelmedidor = $('#selMedidoresUbicacionPred option:checked').val();
+      lect.alerta = $('#selAlertas option:checked').val();
+      lect.lecnotalecturista = $('#inpComentario').val();
+      lect.cambio_serieprecinto = $('#inpPresSerie').val();
+      lect.cambio_precintocolor = $('#selPreCol option:checked').val();
+      lect.cambio_condiciondevivienda = $('#selPreCol option:checked').val(); //<---
+      lect.cambio_edificacion = $('#selTipEdif option:checked').val();
+      lect.cambio_usodeservicio = $('#selTipServ option:checked').val();
+      lect.cambio_giro = $('#selGiro option:checked').val();
       lect.reporte_gestion = $('#selRepGest option:checked').val();
+      //lect.reporte_situacioncomercial = $('#selRepGest option:checked').val();
 
       lect.posicion_xy = App.GPS.currPos.lng+','+App.GPS.currPos.lat;
       lect.ruta_id = App.predioLectura.currentRuta.ruta;
@@ -411,8 +413,8 @@
         $('#secComentarios').hide();
       }
     },
-    onChangeselTipInc:function(){
-      var tip = $('#selTipInc option:checked').val();
+    onChangeselTipAnom:function(){
+      var tip = $('#selTipAnom option:checked').val();
       if(tip==='0'){
         $('#inplect').prop('disabled', false);
       }else{

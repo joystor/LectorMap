@@ -18,15 +18,18 @@
             idsmartphone: App.CONFIG.ID_Movil,
             incidencia: lect.anomalia,
 
-            ubicacion_del_medidor: lect.ubicacion_del_medidor,
-            comentario_alerta: lect.comentario_alerta,
+            cambio_ubicaciondelmedidor: lect.cambio_ubicaciondelmedidor,
+            alerta: lect.alerta,
+            lecnotalecturista: lect.lecnotalecturista,
             //input de comentarios  inpComentario
-            serie_precinto: lect.serie_precinto,
-            color_precinto: lect.color_precinto,
-            tipo_de_edificacion: lect.tipo_de_edificacion,
-            usodeservicio: lect.usodeservicio,
-            giro: lect.giro,
-            reporte_gestion: lect.reporte_gestion
+            cambio_serieprecinto: lect.cambio_serieprecinto,
+            cambio_precintocolor: lect.cambio_precintocolor,
+            cambio_condiciondevivienda: lect.cambio_condiciondevivienda,
+            cambio_edificacion: lect.cambio_edificacion,
+            cambio_usodeservicio: lect.cambio_usodeservicio,
+            cambio_giro: lect.cambio_giro,
+            reporte_gestion: lect.reporte_gestion,
+            reporte_situacioncomercial: lect.reporte_situacioncomercial
 
             //"vivienda": "0",
             //"toma": "1",
