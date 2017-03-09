@@ -16,7 +16,7 @@
             posicion_xy: lect.posicion_xy || '0,0',
             recorrido_id: lect.recorrido_id,
             idsmartphone: App.CONFIG.ID_Movil,
-            incidencia: lect.anomalia,
+            incidencia: lect.incidencia,
 
             cambio_ubicaciondelmedidor: lect.cambio_ubicaciondelmedidor,
             alerta: lect.alerta,
@@ -28,8 +28,7 @@
             cambio_edificacion: lect.cambio_edificacion,
             cambio_usodeservicio: lect.cambio_usodeservicio,
             cambio_giro: lect.cambio_giro,
-            reporte_gestion: lect.reporte_gestion,
-            reporte_situacioncomercial: lect.reporte_situacioncomercial
+            reporte_gestion: lect.reporte_gestion
 
             //"vivienda": "0",
             //"toma": "1",

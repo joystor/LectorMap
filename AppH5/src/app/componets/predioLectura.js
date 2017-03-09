@@ -258,7 +258,7 @@
         lectura: $('#inplect').val(),
         incidencia:0
       };
-      lect.anomalia = $('#selTipAnom option:checked').val() || '0';
+      lect.incidencia = $('#selTipAnom option:checked').val() || '0';
 
       /*Anomalía   anteriormente era Tipo de Incidencia		incidencia
       Lecturas Anomalias				?
@@ -277,7 +277,7 @@
       lect.lecnotalecturista = $('#inpComentario').val();
       lect.cambio_serieprecinto = $('#inpPresSerie').val();
       lect.cambio_precintocolor = $('#selPreCol option:checked').val();
-      lect.cambio_condiciondevivienda = $('#selPreCol option:checked').val(); //<---
+      lect.cambio_condiciondevivienda = $('#selConViv option:checked').val(); //<---
       lect.cambio_edificacion = $('#selTipEdif option:checked').val();
       lect.cambio_usodeservicio = $('#selTipServ option:checked').val();
       lect.cambio_giro = $('#selGiro option:checked').val();
