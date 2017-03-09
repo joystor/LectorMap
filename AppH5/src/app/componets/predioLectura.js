@@ -156,7 +156,7 @@
           recorrido_id: currPred.id,
           fecha: VARS.currDate,
           ruta_id: App.predioLectura.currentRuta.ruta,
-          have_error: undefined
+          have_error: false
         });
         if(currLect){
           $('#selTipInc').material_select('destroy');
@@ -288,6 +288,7 @@
       //lect.predio_id = App.predioLectura.currentRuta.recorrido[App.predioLectura.navigator.current].id;
       lect.folio = App.predioLectura.currentRuta.recorrido[App.predioLectura.navigator.current].folio;
       lect.is_saved = false;
+      lect.have_error = false;
       lect.is_img_saved = false;
       lect.fecha = VARS.currDate;
       lect.imagenes = [];

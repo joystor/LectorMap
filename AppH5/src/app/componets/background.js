@@ -4,7 +4,7 @@
   App.BK = {
     proccessNextLectura: function() {
       var lect = _.find(App.DATOS.lecturas.data, function(o) {
-        return o.is_saved === false && o.have_error===undefined;
+        return o.is_saved === false && o.have_error===false;
       });
       if (lect) {
         App.API.setLectura({
@@ -208,7 +208,7 @@
       var lat = App.GPS.currPos.lat;
       var lng = App.GPS.currPos.lng;
       var ruta_id = App.predioLectura.currentRuta.ruta || 0;
-      
+
       App.API.setRastreo({
         id: App.CONFIG.ID_Movil,
         data: {
