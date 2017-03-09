@@ -22,6 +22,9 @@ $ cordova prepare
 ```
 
 Generar App
+
+Copiar las carpetas que se encuentran en: LectorMap/res/
+en: LectorMap/platforms/android/res/ para que se generen con los iconos de la aplicacion
 ```
 $ cordova build
 ```
