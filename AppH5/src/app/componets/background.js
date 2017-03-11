@@ -2,7 +2,7 @@
   'use strict';
 
   App.BK = {
-    proccessNextLectura: function() {
+    proccessNextLectura: function(call_on_error) {
       var lect = _.find(App.DATOS.lecturas.data, function(o) {
         return o.is_saved === false && o.have_error===false;
       });
@@ -97,7 +97,11 @@
               .then(function(l) {
                 App.DATOS.lecturas._rev = l.rev;
               });
-            $('#btnSaveLectura').removeClass('disabled')
+            $('#btnSaveLectura').removeClass('disabled');
+
+            if(call_on_error){
+              call_on_error();
+            }
           }
         });
       }

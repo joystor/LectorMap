@@ -177,6 +177,7 @@
             $('#inplect').prop('disabled',true);
             $('.material-select').prop('disabled',true);
             $('.btnFotoEvnt').hide();
+            $('#btnFoto').addClass('disabled');
             $('#selTipAnom').prop('disabled',true);
             $('#btnSaveLectura').addClass('disabled');
           }
@@ -356,12 +357,31 @@
           .then(function (l) {
             App.DATOS.lecturas._rev = l.rev;
             Materialize.toast('Lectura guardada en local', 2000, 'teal darken-1');
-            App.BK.proccessNextLectura();
+            App.BK.proccessNextLectura(function(){//<--call If Error
+              $('#inplect').prop('disabled',false);
+              $('.btnFotoEvnt').show();
+              $('#btnFoto').removeClass('disabled');
+              $('#selTipAnom').prop('disabled',false);
+              $('#btnSaveLectura').removeClass('disabled');
+              $('.material-select').prop('disabled',false);
+              $('.material-select').material_select('destroy');
+              $('.material-select').material_select();
+              $('#selTipAnom').material_select('destroy');
+              $('#selTipAnom').prop('disabled',false);
+              $('#selTipAnom').material_select();
+              $('#pPredioLectura input').prop('disabled', false);
+              App.predioLectura.onChangeselTipAnom();
+            });
           })
           .catch(function(e){console.log(e);});
       })
       .catch(function(e){console.log(e);});
 
+      $('.material-select').prop('disabled',true);
+      $('.material-select').material_select('destroy');
+      $('.material-select').material_select();
+      $('#pPredioLectura input').prop('disabled', true);
+      $('#btnFoto').addClass('disabled');
       $('#btnSaveLectura').addClass('disabled');
       //$('#button-collapse').sideNav('hide');
     },
