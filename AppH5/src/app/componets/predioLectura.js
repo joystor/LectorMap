@@ -120,6 +120,9 @@
             '</div>';
       $('#secPhoto').append(html);
       App.predioLectura.regRemoveFotoEvent();
+      if($('#secPhoto .btnFotoEvnt').lenght===5){
+        $('#btnFoto').addClass('disabled');
+      }
     },
     regRemoveFotoEvent:_.debounce(function(){
       $('.btnFotoEvnt').off('click').on('click',function(){
