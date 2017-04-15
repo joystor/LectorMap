@@ -109,11 +109,11 @@ App.initApp = _.debounce(function() {
 
   App.predioLectura = new App.PredioLectura();
   $('#app').append(App.predioLectura.render().$el);
-  App.predioLectura.activate();
+  
 
   App.panelSettings = new App.PanelSettings();
   $('#app').append(App.panelSettings.render().$el);
-  App.panelSettings.activate();
+
 
 
   App.DB.get('id-equipo')

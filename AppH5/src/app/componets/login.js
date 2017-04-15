@@ -34,6 +34,9 @@
           $('body').removeClass('login-container');
           $('#pLogin').hide();
           $('#btnLogIn').removeClass('disabled');
+
+          App.panelSettings.activate();
+          App.predioLectura.activate();
           //document.getElementById('map_canvas').style.display="block";
           //$('#pMap').css("height",$(window).height()-$('#pMenu').height());
           //$('#pMap').show();
