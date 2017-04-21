@@ -6,7 +6,7 @@ body, html {
 }
 
 .login-container {
-  background: -webkit-linear-gradient(#0277bd,#eaeaea);
+  background: #000;
 }
 
 #app{

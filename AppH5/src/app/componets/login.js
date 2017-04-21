@@ -4,7 +4,7 @@
   App.Login = Backbone.View.extend({
     id: 'pLogin',
     tagName: 'div',
-    className: '',
+    className: 'black',
     template: window.templates.login,
     initialize: function() {
     },

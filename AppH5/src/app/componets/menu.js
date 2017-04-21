@@ -4,7 +4,7 @@
   App.Menu = Backbone.View.extend({
     id: 'pMenu',
     tagName: 'div',
-    className: '',
+    className: 'black',
     template: window.templates.menu,
     initialize: function() {
     },

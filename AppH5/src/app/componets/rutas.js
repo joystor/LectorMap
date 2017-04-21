@@ -35,11 +35,11 @@
         id: App.CONFIG.LecturistaID,
         onSuccess:function(response){
           if(response==='0'){
-            Materialize.toast('Sin recorridos asignadas para hoy', 4000, 'red');
+            Materialize.toast('Sin recorridos asignadas para hoy', 4000, 'msg-rojo');
             return;
           }
           if(response && response.length > 0){
-            Materialize.toast('Leyendo recorridos', 2000, 'blue darken-1');
+            Materialize.toast('Leyendo recorridos', 2000, 'msg-azul');
             App.DATOS.recorridos = {
               _id: 'recorridos',
               _rev: App.DATOS.recorridos? App.DATOS.recorridos._rev : undefined,
@@ -58,15 +58,15 @@
               });
 
           }else{
-            Materialize.toast('Sin recorridos', 4000, 'red');
+            Materialize.toast('Sin recorridos', 4000, 'msg-rojo');
           }
         },
         onCache: function(){
-          Materialize.toast('Recorridos en cache', 2000, 'teal darken-1');
+          Materialize.toast('Recorridos en cache', 2000, 'msg-azul');
           App.rutas.showRutas();
         },
         onError:function(err){
-          Materialize.toast('Sin recorridos', 4000, 'red');
+          Materialize.toast('Sin recorridos', 4000, 'msg-rojo');
         }
       });
     },
