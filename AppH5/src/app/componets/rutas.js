@@ -76,7 +76,7 @@
         var cant = o.recorrido.length;
         var html = '<div class="row">'+
             '  <div class="col s12 m6">'+
-            '    <div class="card '+(cant===0?'red lighten-1':'blue-grey darken-1')+'">'+
+            '    <div class="card '+(cant===0?'red lighten-1':'gris')+'">'+
             '      <div class="card-content white-text">'+
             '        <span class="card-title">'+o.ruta+'</span>'+
             '      </div>'+

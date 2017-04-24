@@ -74,7 +74,8 @@
       $('#pPredioLectura input[type="text"]').val('');
       $('#pPredioLectura input').prop('disabled', false);
       $('#pPredioLectura textarea').val('');
-      $('#btnSaveLectura').removeClass('disabled');
+      $('#btnSaveLectura').removeClass('red');
+      $('#btnSaveLectura').addClass('gris');
       $('#secDatosLectura input').prop('disabled', false);
       $('#inpObserv').prop('disabled', false);
       $('#secDatosLectura label').removeClass('active');
@@ -151,7 +152,8 @@
       self.showNextPredio();
     },
     loadPredioData:function(){
-      $('#btnSaveLectura').removeClass('disabled');
+      $('#btnSaveLectura').removeClass('red');
+      $('#btnSaveLectura').addClass('gris');
       var self = this;
       var currPred = self.currentRuta.recorrido[self.navigator.current];
       if(currPred){
@@ -182,7 +184,8 @@
             $('.btnFotoEvnt').hide();
             $('#btnFoto').addClass('disabled');
             $('#selTipAnom').prop('disabled',true);
-            $('#btnSaveLectura').addClass('disabled');
+            $('#btnSaveLectura').addClass('red');
+            $('#btnSaveLectura').removeClass('gris');
           }
           $('#selTipAnom').material_select();
           $('.material-select').material_select();
@@ -245,7 +248,7 @@
 
 
     saveLectura: function(){
-      if($('#btnSaveLectura').hasClass('disabled')===true){
+      if($('#btnSaveLectura').hasClass('red')===true){
         return;
       }
       var tipAnom = $('#selTipAnom option:checked').val();
@@ -365,7 +368,8 @@
               $('.btnFotoEvnt').show();
               $('#btnFoto').removeClass('disabled');
               $('#selTipAnom').prop('disabled',false);
-              $('#btnSaveLectura').removeClass('disabled');
+              $('#btnSaveLectura').removeClass('red');
+              $('#btnSaveLectura').addClass('gris');
               $('.material-select').prop('disabled',false);
               $('.material-select').material_select('destroy');
               $('.material-select').material_select();
@@ -385,7 +389,8 @@
       $('.material-select').material_select();
       $('#pPredioLectura input').prop('disabled', true);
       $('#btnFoto').addClass('disabled');
-      $('#btnSaveLectura').addClass('disabled');
+      $('#btnSaveLectura').addClass('red');
+      $('#btnSaveLectura').removeClass('gris');
       //$('#button-collapse').sideNav('hide');
     },
 

@@ -1,9 +1,9 @@
-<div id="slide-out" class="side-nav">
-  <div class="container">
+<div id="slide-out" class="side-nav black">
+  <div class="container black white-text">
     <div class="row top-bottom-small">
-          <a id="btnLastPredio" class="col s4 waves-effect waves-light btn"><i class="material-icons">&#xE408;</i></a>
-          <p id="pInfoPredio2" class="col s2" style="top: 19px;font-size: 18px;"></p>
-          <a id="btnNextPredio" class="col s4 waves-effect waves-light btn" style="position: fixed; right: 0px;"><i class="material-icons">&#xE409;</i></a>
+          <a id="btnLastPredio" class="col s2 waves-effect waves-rojo gris btn"><i class="material-icons">&#xE408;</i></a>
+          <p id="pInfoPredio2" class="col s4" style="top: 19px;font-size: 18px;"></p>
+          <a id="btnNextPredio" class="col s2 waves-effect waves-rojo gris btn" style="position: fixed; right: 0px;"><i class="material-icons">&#xE409;</i></a>
     </div>
     <div class="row top-bottom-small">
       <div class="col s12">
@@ -22,17 +22,17 @@
       </div>
     </div>
     <div class="row col s12" style="margin-bottom: 0px;">
-      <a id="btnSaveLectura" class="waves-effect waves-rojo btn"><i class="material-icons">&#xE161;</i></a>
+      <a id="btnSaveLectura" class="waves-effect waves-rojo gris btn"><i class="material-icons">&#xE161;</i></a>
     </div>
 
     <div class="row">
       <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s1"><a class="active" href="#stInfo"><i class="material-icons">&#xE88E;</i></a></li>
-          <li class="tab col s1"><a href="#stLect"><i class="material-icons">&#xE150;</i></a></li>
-          <li class="tab col s1"><a href="#stPhoto"><i class="material-icons">&#xE3B0;</i></a></li>
-          <li class="tab col s1"><a href="#stCambios"><i class="material-icons">&#xE145;</i></a></li>
-          <li class="tab col s1"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons">&#xE8B4;</i></a></li>
+        <ul class="tabs gris">
+          <li class="tab col s1"><a class="active" href="#stInfo"><i class="material-icons white-text">&#xE88E;</i></a></li>
+          <li class="tab col s1"><a href="#stLect"><i class="material-icons white-text">&#xE150;</i></a></li>
+          <li class="tab col s1"><a href="#stPhoto"><i class="material-icons white-text">&#xE3B0;</i></a></li>
+          <li class="tab col s1"><a href="#stCambios"><i class="material-icons white-text">&#xE145;</i></a></li>
+          <li class="tab col s1"><a id="btnShowMapPredio" href="#stMap"><i class="material-icons white-text">&#xE8B4;</i></a></li>
         </ul>
       </div>
       <div id="stInfo" class="col s12">
@@ -46,7 +46,7 @@
           <div id="secCapLec" style="">
             <div class="row">
               <div class="input-field col s12">
-                <div class="card-panel blue lighten-5">
+                <div class="card-panel gris">
                   <input id="inplect" type="number" class="validate" maxlength="9">
                   <label for="inplect" class="active">Lectura</label>
                 </div>
@@ -57,7 +57,7 @@
           <div id="secCapInc" style="display:none">
             <div class="row">
               <div class="input-field col s12">
-                <div class="card-panel red lighten-5">
+                <div class="card-panel gris">
                   <input id="inpinc" type="text" class="validate">
                   <label for="inpinc">Orden</label>
                 </div>
@@ -68,7 +68,7 @@
 
           <div id="secTipInc" class="row" style="">
             <div class="input-field col s12">
-              <div class="card-panel red lighten-5">
+              <div class="card-panel gris">
                 <select id="selTipAnom" class="validate">
                   <option value="0" selected>Seleccione una opción</option>
                   <option value="5">A	-	Medidor alterado</option>
@@ -104,7 +104,7 @@
       <div id="stPhoto" class="col s12">
         <div id="secFoto" style="">
           <div class="row">
-            <a id="btnFoto" class="btn-floating btn-large waves-effect waves-light red">
+            <a id="btnFoto" class="btn-floating btn-large waves-effect waves-rojo gris">
               <i class="material-icons" style="width:initial">photo_camera</i>
             </a>
             <div id="numFotos"></div>
@@ -123,7 +123,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel blue lighten-4">
+            <div class="card-panel gris">
               <select id="selMedidoresUbicacionPred" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Dentro accesible al lecturista.</option>
@@ -140,7 +140,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel lime lighten-4">
+            <div class="card-panel gris">
               <select id="selAlertas" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 - Medidor oculto en arbustos o pasto</option>
@@ -153,7 +153,7 @@
             </div>
           </div>
           <div id="secComentarios" class="input-field col s12" style="display:none">
-            <div class="card-panel blue lighten-5">
+            <div class="card-panel gris">
               <input id="inpComentario" type="text" class="validate" maxlength="253">
               <label for="inpComentario">Comentarios</label>
             </div>
@@ -163,7 +163,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel blue lighten-5">
+            <div class="card-panel gris">
               <input id="inpPresSerie" type="text" class="validate" maxlength="12">
               <label for="inpPresSerie">Precinto serie</label>
             </div>
@@ -172,7 +172,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel blue lighten-4">
+            <div class="card-panel gris">
               <select id="selPreCol" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Azul</option>
@@ -189,7 +189,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel lime lighten-4">
+            <div class="card-panel gris">
               <select id="selConViv" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Cerrada</option>
@@ -205,7 +205,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel lime lighten-4">
+            <div class="card-panel gris">
               <select id="selTipEdif" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 - Construido</option>
@@ -246,7 +246,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel lime lighten-4">
+            <div class="card-panel gris">
               <select id="selTipServ" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1 - Doméstico</option>
@@ -292,7 +292,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel blue lighten-4">
+            <div class="card-panel gris">
               <select id="selGiro" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Indefinido</option>
@@ -450,7 +450,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <div class="card-panel blue lighten-4">
+            <div class="card-panel gris">
               <select id="selRepGest" class="validate material-select">
                 <option value="0" selected>Seleccione una opción</option>
                 <option value="1">1	- Fuga en Toma domiciliaria FTA</option>

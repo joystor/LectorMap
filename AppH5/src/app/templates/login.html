@@ -1,31 +1,42 @@
 <div class="card-panel black">
-<div id="login-form" class="container">
-  <div class="row">
-    <img class="responsive-img" src="images/XOOK2.png">
-  </div>
-  <form class="col s12">
+  <div id="login-form" class="container">
     <div class="row">
-      <div class="input-field col s12">
-        <input id="pU" type="text" class="validate">
-        <label for="pU">Usuario</label>
-      </div>
-      <div class="input-field col s12">
-        <input id="pP" type="password" class="validate">
-        <label for="pP">Password</label>
-      </div>
-      <div class="input-field col s12" style="text-align: right;">
-        <a id="btnLogIn" class="waves-effect waves-light btn black gris">iniciar</a>
-      </div>
+      <img class="responsive-img" src="images/XOOK2.png">
     </div>
-    <div id="logInLoader" style="display:none">
-      <div class="progress">
-        <div class="indeterminate"></div>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="pU" type="text" class="validate">
+          <label for="pU">Usuario</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="pP" type="password" class="validate">
+          <label for="pP">Password</label>
+        </div>
+        <div class="input-field col s12" style="text-align: right;">
+          <a id="btnLogIn" class="waves-effect waves-light btn black gris">iniciar</a>
+        </div>
       </div>
-    </div>
-  </form>
-  <div class="row">
-    <div id="msgLogErr" class="input-field col s11 offset-s1 red-text" style="text-align: right;">
+      <div id="logInLoader" style="display:none">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+    <div class="row">
+      <div id="msgLogErr" class="input-field col s11 offset-s1 red-text" style="text-align: right;">
+      </div>
     </div>
   </div>
-</div>
 </div>
