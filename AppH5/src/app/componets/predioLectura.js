@@ -111,12 +111,12 @@
 
     addPhoto:function(imageURI){
       var id = moment().unix();
-      var html = '<div id="id_foto_'+id+'" class="secFoto card blue-grey darken-1" >'+
+      var html = '<div id="id_foto_'+id+'" class="secFoto card gris" >'+
             '<div class="card-image">'+
             ' <img id="img_foto_'+id+'" class="imgFoto2Save" src="'+imageURI+'">'+
             '</div>'+
-            '<div class="card-action">'+
-            '<a href="#" class="btnFotoEvnt" data-id="'+id+'"><i class="material-icons" style="width:initial">clear</i>Eliminar</a>'+
+            '<div class="card-action gris">'+
+            '<a href="#" class="btnFotoEvnt" data-id="'+id+'"><i class="material-icons white-text" style="width:initial">clear</i>Eliminar</a>'+
             '</div>'+
             '</div>';
       $('#secPhoto').append(html);
